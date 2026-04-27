@@ -3,172 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vysan Chellan — Freelance Web Developer & Designer</title>
-  <meta name="description" content="I design and build conversion-focused websites for local businesses in South Africa." />
+  <title>Vysan Chellan — Premium Freelance Web Developer</title>
+  <meta name="description" content="Premium conversion-focused websites for local businesses. Built fast. Designed to sell." />
+  <meta property="og:title" content="Vysan Chellan — Premium Freelance Web Developer" />
+  <meta property="og:description" content="Modern websites for dentists, gyms, contractors & service businesses." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="noise"></div>
+  <div class="grid-overlay"></div>
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
 
-  <header class="header glass">
-    <a class="brand" href="index.html">Vysan<span>.</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-    <nav class="nav">
-      <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="nav-wrap">
+    <div class="container nav glass">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        Vysan<span class="logo-lite">Studio</span>
+      </a>
+
+      <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav class="menu">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="menu-cta">Start Project</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero section">
-      <p class="eyebrow reveal">South Africa • Freelance Dev + Design</p>
-      <h1 class="reveal delay-1">
-        I build <span class="grad">high-converting websites</span> for local businesses.
-      </h1>
-      <p class="lead reveal delay-2">
-        Fast, modern, mobile-first sites designed to generate leads and make your brand look premium.
-      </p>
-      <div class="hero-cta reveal delay-3">
-        <a class="btn btn-primary" href="#contact">Book a Project</a>
-        <a class="btn btn-ghost" href="#work">See Mockups</a>
-      </div>
+    <section class="hero container">
+      <div class="hero-copy reveal">
+        <p class="kicker">Freelance Web Developer • South Africa</p>
+        <h1>
+          Websites that don’t just look elite —
+          <span class="grad-text">they convert.</span>
+        </h1>
+        <p class="sub">
+          I build high-performance websites for local businesses that want more leads, stronger trust,
+          and premium positioning.
+        </p>
 
-      <div class="stats reveal delay-4">
-        <article><h3>5–10 days</h3><p>Typical delivery</p></article>
-        <article><h3>Mobile-first</h3><p>Built for conversion</p></article>
-        <article><h3>3 Niches</h3><p>Ready-to-launch demos</p></article>
-      </div>
-    </section>
-
-    <section id="work" class="section">
-      <div class="section-head">
-        <h2>Featured Mockups</h2>
-        <p>Explore demo websites tailored to local service businesses.</p>
-      </div>
-
-      <div class="card-grid">
-        <a class="project-card" href="dentist.html">
-          <div class="thumb thumb-dentist"></div>
-          <div class="card-content">
-            <h3>Dentist Website</h3>
-            <p>Premium clinic look + appointment-first UX.</p>
-            <span>Open Demo →</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="gym.html">
-          <div class="thumb thumb-gym"></div>
-          <div class="card-content">
-            <h3>Gym Website</h3>
-            <p>High-energy brand + membership-focused funnel.</p>
-            <span>Open Demo →</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="contractor.html">
-          <div class="thumb thumb-contractor"></div>
-          <div class="card-content">
-            <h3>Contractor Website</h3>
-            <p>Trust-building design + quote-driven landing flow.</p>
-            <span>Open Demo →</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="section-head">
-        <h2>Services</h2>
-        <p>Simple packages designed for small businesses.</p>
-      </div>
-
-      <div class="price-grid">
-        <article class="price-card glass">
-          <p class="tag">Starter</p>
-          <h3>Launch Page</h3>
-          <p class="price">From R4,500</p>
-          <ul>
-            <li>1-page high-converting site</li>
-            <li>Mobile optimization</li>
-            <li>Lead form + WhatsApp CTA</li>
-            <li>3–5 day delivery</li>
-          </ul>
-        </article>
-
-        <article class="price-card glass featured">
-          <p class="tag">Most Popular</p>
-          <h3>Growth Website</h3>
-          <p class="price">From R9,500</p>
-          <ul>
-            <li>Up to 5 pages</li>
-            <li>SEO basics setup</li>
-            <li>Brand-matched UI design</li>
-            <li>7–10 day delivery</li>
-          </ul>
-        </article>
-
-        <article class="price-card glass">
-          <p class="tag">Retainer</p>
-          <h3>Care Plan</h3>
-          <p class="price">From R1,200/mo</p>
-          <ul>
-            <li>Monthly updates</li>
-            <li>Performance checks</li>
-            <li>Priority support</li>
-            <li>Small feature edits</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="process" class="section">
-      <div class="section-head">
-        <h2>Process</h2>
-        <p>Fast and clear from idea to launch.</p>
-      </div>
-
-      <div class="timeline">
-        <article class="step"><span>01</span><h3>Discovery</h3><p>We define your goals, audience, and offer.</p></article>
-        <article class="step"><span>02</span><h3>Design + Build</h3><p>I create your site with conversion-focused UX.</p></article>
-        <article class="step"><span>03</span><h3>Launch</h3><p>Go live with analytics + lead capture ready.</p></article>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="section-head">
-        <h2>Let’s build your website</h2>
-        <p>Send a message and I’ll get back within 24 hours.</p>
-      </div>
-
-      <div class="contact-wrap glass">
-        <div>
-          <h3>Direct contact</h3>
-          <p>Email: <a href="mailto:hello@vysanchellan.dev">hello@vysanchellan.dev</a></p>
-          <p>WhatsApp: <a href="https://wa.me/27000000000" target="_blank" rel="noreferrer">+27 00 000 0000</a></p>
-          <p class="muted">Tip: Replace with your real email + WhatsApp number.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Book a Build</a>
+          <a class="btn btn-secondary" href="#work">View Demos</a>
         </div>
 
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! Connect your form handler next.');">
-          <input type="text" placeholder="Your name" required />
-          <input type="email" placeholder="Your email" required />
-          <input type="text" placeholder="Business type (e.g. gym, dentist)" />
-          <textarea rows="5" placeholder="What do you need built?" required></textarea>
+        <div class="hero-stats">
+          <div><strong>5–10 days</strong><span>Delivery speed</span></div>
+          <div><strong>Mobile first</strong><span>Conversion UX</span></div>
+          <div><strong>3 premium demos</strong><span>Niche-ready</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card glass reveal delay-1">
+        <p class="card-kicker">Live Offer</p>
+        <h3>Business Website Sprint</h3>
+        <p class="card-text">From strategy to launch in 7–10 days.</p>
+        <ul>
+          <li>Brand-aligned visual direction</li>
+          <li>Lead capture + CTA optimization</li>
+          <li>Speed + SEO fundamentals</li>
+        </ul>
+        <a href="#contact" class="text-link">Claim a project slot →</a>
+      </div>
+    </section>
+
+    <section id="work" class="container section">
+      <div class="section-head">
+        <p class="kicker">Selected Mockups</p>
+        <h2>Demo sites built to close clients</h2>
+      </div>
+
+      <div class="projects">
+        <a class="project p1" href="dentist.html">
+          <div class="project-content">
+            <p>Dentist</p>
+            <h3>BrightSmile Clinic</h3>
+            <span>Premium trust-based patient funnel →</span>
+          </div>
+        </a>
+
+        <a class="project p2" href="gym.html">
+          <div class="project-content">
+            <p>Gym</p>
+            <h3>ForgeFit Performance</h3>
+            <span>High-energy membership conversion flow →</span>
+          </div>
+        </a>
+
+        <a class="project p3" href="contractor.html">
+          <div class="project-content">
+            <p>Contractor</p>
+            <h3>TitanBuild Projects</h3>
+            <span>Authority-first quote generation experience →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="services" class="container section">
+      <div class="section-head">
+        <p class="kicker">Packages</p>
+        <h2>Simple pricing, clear outcomes</h2>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price glass">
+          <p class="pill">Starter</p>
+          <h3>Launch Page</h3>
+          <p class="amount">R4,500+</p>
+          <ul>
+            <li>Single-page conversion site</li>
+            <li>WhatsApp + lead capture integration</li>
+            <li>3–5 day turnaround</li>
+          </ul>
+        </article>
+
+        <article class="price glass featured">
+          <p class="pill">Best Value</p>
+          <h3>Growth Website</h3>
+          <p class="amount">R9,500+</p>
+          <ul>
+            <li>Up to 5 premium pages</li>
+            <li>SEO and performance setup</li>
+            <li>7–10 day turnaround</li>
+          </ul>
+        </article>
+
+        <article class="price glass">
+          <p class="pill">Retainer</p>
+          <h3>Care Plan</h3>
+          <p class="amount">R1,200/mo+</p>
+          <ul>
+            <li>Monthly updates and support</li>
+            <li>Priority edits</li>
+            <li>Site health monitoring</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="container section">
+      <div class="section-head">
+        <p class="kicker">How we work</p>
+        <h2>Fast, structured, premium</h2>
+      </div>
+
+      <div class="process-grid">
+        <article class="step glass"><span>01</span><h3>Strategy Call</h3><p>Clarify goals, offer, and target audience.</p></article>
+        <article class="step glass"><span>02</span><h3>Design + Build</h3><p>Modern UI + conversion-focused structure.</p></article>
+        <article class="step glass"><span>03</span><h3>Launch + Iterate</h3><p>Deploy, measure, improve performance.</p></article>
+      </div>
+    </section>
+
+    <section id="faq" class="container section">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>Answers clients ask before hiring</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="glass">
+          <summary>How fast can you deliver?</summary>
+          <p>Most projects launch in 5–10 days, depending on scope and content readiness.</p>
+        </details>
+        <details class="glass">
+          <summary>Do you require an upfront payment?</summary>
+          <p>Yes — 50% upfront secures your slot, 40% on preview approval, 10% on final handoff.</p>
+        </details>
+        <details class="glass">
+          <summary>Can you maintain the site monthly?</summary>
+          <p>Yes, the Care Plan covers edits, improvements, and ongoing support.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="container section contact">
+      <div class="contact-card glass">
+        <div>
+          <p class="kicker">Start your project</p>
+          <h2>Let’s build something that wins attention and leads.</h2>
+          <p class="contact-note">
+            Replace these with your real details:
+            <br>Email: hello@vysanchellan.dev
+            <br>WhatsApp: +27 00 000 0000
+          </p>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! Replace this with Formspree or your backend endpoint.');">
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Your email" required>
+          <input type="text" placeholder="Business type">
+          <textarea rows="5" placeholder="What do you need?" required></textarea>
           <button class="btn btn-primary" type="submit">Send Inquiry</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2026 Vysan Chellan • Freelance Web Developer</p>
+  <footer class="footer container">
+    <p>© 2026 Vysan Studio. Built for serious growth.</p>
   </footer>
 </body>
 </html>
