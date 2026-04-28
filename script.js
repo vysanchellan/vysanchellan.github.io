@@ -4,6 +4,24 @@
 (() => {
   "use strict";
 
+  // -- Scroll progress + nav scrolled state --------------------------------
+  let progressEl = document.querySelector(".scroll-progress");
+  if (!progressEl) {
+    progressEl = document.createElement("div");
+    progressEl.className = "scroll-progress";
+    progressEl.setAttribute("aria-hidden", "true");
+    document.body.prepend(progressEl);
+  }
+  function onScroll() {
+    const h = document.documentElement;
+    const max = (h.scrollHeight - h.clientHeight) || 1;
+    const pct = Math.min(100, Math.max(0, (h.scrollTop / max) * 100));
+    progressEl.style.setProperty("--scroll", pct + "%");
+    document.body.classList.toggle("scrolled", h.scrollTop > 32);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
   // -- Reveal on scroll ----------------------------------------------------
   const reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {
@@ -90,13 +108,22 @@
 
   function initBooking(root) {
     const services = root.querySelectorAll(".svc");
+    const calShell = root.querySelector("[data-cal]");
     const cal = root.querySelector(".cal");
+    const calTitle = root.querySelector("[data-cal-title]");
+    const calPrev = root.querySelector("[data-cal-prev]");
+    const calNext = root.querySelector("[data-cal-next]");
     const slotsEl = root.querySelector(".slots");
     const summary = root.querySelector(".summary");
     const stepperNums = root.querySelectorAll(".stepper .num");
     const confirmBtn = root.querySelector("[data-confirm]");
 
     const state = { service: null, date: null, slot: null };
+    const today = new Date();
+    const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const view = { y: today.getFullYear(), m: today.getMonth() }; // m: 0=Jan
+    const MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
+                          "July", "August", "September", "October", "November", "December"];
 
     // Service selection
     services.forEach((s) => {
@@ -108,38 +135,75 @@
         renderSummary();
       });
     });
-    // Default-select first
     if (services[0]) services[0].click();
 
-    // Build calendar (next 35 days, today first)
-    if (cal) {
+    function fmtLabel(d) {
+      return d.toLocaleDateString("en-ZA", { weekday: "short", day: "numeric", month: "short" });
+    }
+    function isoOf(d) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      return `${y}-${m}-${dd}`;
+    }
+
+    function renderCalendar() {
+      if (!cal) return;
       cal.innerHTML = "";
-      const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-      days.forEach((d) => {
-        const h = document.createElement("div");
-        h.className = "d head";
-        h.textContent = d;
-        cal.appendChild(h);
-      });
-      const today = new Date();
-      // Align to Monday-start
-      const start = new Date(today);
-      const day = (start.getDay() + 6) % 7; // 0=Mon
-      start.setDate(start.getDate() - day);
-      for (let i = 0; i < 28; i++) {
-        const d = new Date(start);
-        d.setDate(start.getDate() + i);
+
+      const firstOfMonth = new Date(view.y, view.m, 1);
+      const daysInMonth = new Date(view.y, view.m + 1, 0).getDate();
+      // Monday-start offset (0=Mon ... 6=Sun)
+      const leadingPad = (firstOfMonth.getDay() + 6) % 7;
+
+      if (calTitle) calTitle.textContent = `${MONTH_NAMES[view.m]} ${view.y}`;
+      if (calPrev) {
+        const atCurrent = view.y === today.getFullYear() && view.m === today.getMonth();
+        calPrev.disabled = atCurrent;
+        calPrev.setAttribute("aria-disabled", atCurrent ? "true" : "false");
+      }
+
+      // Leading pads (previous month, dimmed, non-interactive)
+      for (let i = 0; i < leadingPad; i++) {
+        const cell = document.createElement("span");
+        cell.className = "d pad";
+        cell.setAttribute("aria-hidden", "true");
+        cal.appendChild(cell);
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const d = new Date(view.y, view.m, day);
         const cell = document.createElement("button");
         cell.type = "button";
         cell.className = "d";
-        cell.textContent = d.getDate();
-        const isPast = d < new Date(today.toDateString());
-        const isWeekendSunday = d.getDay() === 0;
-        if (isPast || isWeekendSunday) cell.classList.add("dim");
-        cell.dataset.iso = d.toISOString().slice(0, 10);
-        cell.dataset.label = d.toLocaleDateString("en-ZA", { weekday: "short", day: "numeric", month: "short" });
+        cell.setAttribute("role", "gridcell");
+        cell.textContent = day;
+
+        const isPast = d < todayMidnight;
+        const isSunday = d.getDay() === 0;
+        // Deterministic blocked day: every 9th day index per (y,m) is "fully booked"
+        const blockedSeed = (view.y * 31 + view.m * 7 + day) % 11;
+        const isBlocked = blockedSeed === 0;
+
+        if (isPast || isSunday || isBlocked) {
+          cell.classList.add("dim");
+          cell.disabled = true;
+          if (isPast) cell.setAttribute("aria-label", `${fmtLabel(d)} — past`);
+          else if (isSunday) cell.setAttribute("aria-label", `${fmtLabel(d)} — closed`);
+          else cell.setAttribute("aria-label", `${fmtLabel(d)} — fully booked`);
+        } else {
+          cell.setAttribute("aria-label", fmtLabel(d));
+        }
+
+        cell.dataset.iso = isoOf(d);
+        cell.dataset.label = fmtLabel(d);
+
+        if (state.date && state.date.iso === cell.dataset.iso) {
+          cell.setAttribute("aria-pressed", "true");
+        }
+
         cell.addEventListener("click", () => {
-          if (cell.classList.contains("dim")) return;
+          if (cell.disabled) return;
           cal.querySelectorAll(".d").forEach((o) => o.setAttribute("aria-pressed", "false"));
           cell.setAttribute("aria-pressed", "true");
           state.date = { iso: cell.dataset.iso, label: cell.dataset.label };
@@ -148,11 +212,35 @@
           updateStepper();
           renderSummary();
         });
+
         cal.appendChild(cell);
       }
-      // Auto-select first available
-      const firstAvail = cal.querySelector(".d:not(.head):not(.dim)");
+    }
+
+    function selectFirstAvailable() {
+      const firstAvail = cal && cal.querySelector(".d:not(.dim):not(.pad)");
       if (firstAvail) firstAvail.click();
+    }
+
+    if (calPrev) {
+      calPrev.addEventListener("click", () => {
+        if (calPrev.disabled) return;
+        view.m -= 1;
+        if (view.m < 0) { view.m = 11; view.y -= 1; }
+        renderCalendar();
+      });
+    }
+    if (calNext) {
+      calNext.addEventListener("click", () => {
+        view.m += 1;
+        if (view.m > 11) { view.m = 0; view.y += 1; }
+        renderCalendar();
+      });
+    }
+
+    if (cal) {
+      renderCalendar();
+      selectFirstAvailable();
     }
 
     function renderSlots() {

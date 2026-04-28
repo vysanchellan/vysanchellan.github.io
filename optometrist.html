@@ -95,7 +95,15 @@
 
       <div>
         <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Pick a date</p>
-        <div class="cal" aria-label="Calendar"></div>
+        <div class="cal-shell" data-cal>
+          <div class="cal-head">
+            <button class="cal-nav" type="button" data-cal-prev aria-label="Previous month"><span aria-hidden="true">&#8249;</span></button>
+            <div class="cal-title" data-cal-title aria-live="polite"></div>
+            <button class="cal-nav" type="button" data-cal-next aria-label="Next month"><span aria-hidden="true">&#8250;</span></button>
+          </div>
+          <div class="cal-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+          <div class="cal" aria-label="Calendar" role="grid"></div>
+        </div>
       </div>
 
       <div>
