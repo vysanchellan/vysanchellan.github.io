@@ -1,42 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arcadia Pharmacy</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080b" />
+  <title>Arcadia Pharmacy — Pharmacy Demo · Vysan Studio</title>
+  <meta name="description" content="A live demo of a booking-first pharmacy website built by Vysan Studio." />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2334d399'/><text x='50%25' y='58%25' text-anchor='middle' font-family='serif' font-weight='700' font-size='18' fill='%23052b1c'>V</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
-<body class="demo pharmacy">
+<body class="pharm demo-body">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
-  <a class="back-pill" href="index.html">← Back</a>
+  <a class="demo-back" href="index.html">← Back to Vysan Studio</a>
 
-  <header class="demo-hero pharm-hero">
-    <div class="hero-text">
-      <span class="badge">24/7 Trusted Pharmacy</span>
-      <h1>Fast prescriptions. Zero stress.</h1>
-      <p>Trusted medication, wellness products and instant refills delivered within hours.</p>
-      <button class="btn btn-dark">Upload Prescription</button>
+  <header class="demo-hero container">
+    <div class="reveal">
+      <span class="badge">Pharmacy Demo · Durban North</span>
+      <h1>Fast prescriptions. <em style="font-style:italic; color: var(--pharm);">Zero stress.</em></h1>
+      <p class="lede">Trusted medication, vaccinations and wellness consults — refill in 60 seconds, delivered the same day across KZN.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#book">Book a service <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/27838555008?text=Hi%20Arcadia%2C%20I%20need%20a%20prescription%20refill.">Upload prescription</a>
+      </div>
+
+      <div class="stats-strip">
+        <div class="it"><div class="num">Same-day</div><div class="lbl">Delivery in KZN</div></div>
+        <div class="it"><div class="num">7 days</div><div class="lbl">Open every week</div></div>
+        <div class="it"><div class="num">85+</div><div class="lbl">Wellness products</div></div>
+        <div class="it"><div class="num">All schemes</div><div class="lbl">Medical aid claims</div></div>
+      </div>
+    </div>
+
+    <div class="demo-vis reveal" data-delay="2" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1400');">
+      <div class="float tl"><strong>Today · 15:30</strong>Next available pharmacist</div>
+      <div class="float br"><strong>Free delivery</strong>over R350 in KZN</div>
     </div>
   </header>
 
-  <section class="demo-section">
-    <h2>Core Services</h2>
-    <div class="feature-grid">
-      <div class="feature-card">Prescription delivery</div>
-      <div class="feature-card">Vaccination booking</div>
-      <div class="feature-card">Online refill requests</div>
+  <section id="book" class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Live booking demo</span>
+      <h2>Book a pharmacist consult.</h2>
+      <p>From flu shots to chronic medication reviews — book online in under a minute.</p>
+    </div>
+
+    <div class="booking glass reveal" data-booking>
+      <div class="booking-head">
+        <h3>New appointment</h3>
+        <div class="stepper">
+          <span class="num active">1</span><span class="line"></span>
+          <span class="num">2</span><span class="line"></span>
+          <span class="num">3</span><span class="line"></span>
+          <span class="num">4</span>
+        </div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Choose service</p>
+        <div class="svc-grid">
+          <button class="svc" data-name="Flu vaccination" data-duration="15 min" aria-pressed="true">
+            <span class="name">Flu vaccination</span>
+            <span class="duration">15 min · R220</span>
+          </button>
+          <button class="svc" data-name="COVID booster" data-duration="15 min">
+            <span class="name">COVID booster</span>
+            <span class="duration">15 min · Free</span>
+          </button>
+          <button class="svc" data-name="Chronic med review" data-duration="30 min">
+            <span class="name">Chronic med review</span>
+            <span class="duration">30 min · R380</span>
+          </button>
+          <button class="svc" data-name="Blood pressure check" data-duration="10 min">
+            <span class="name">BP check</span>
+            <span class="duration">10 min · R80</span>
+          </button>
+          <button class="svc" data-name="Travel health consult" data-duration="30 min">
+            <span class="name">Travel consult</span>
+            <span class="duration">30 min · R450</span>
+          </button>
+          <button class="svc" data-name="Glucose screening" data-duration="15 min">
+            <span class="name">Glucose check</span>
+            <span class="duration">15 min · R120</span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Pick a date</p>
+        <div class="cal" aria-label="Calendar"></div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Available times</p>
+        <div class="slots"></div>
+      </div>
+
+      <div class="summary"></div>
+
+      <div class="booking-actions">
+        <button class="ghost" type="button">Save for later</button>
+        <button class="btn btn-primary" type="button" data-confirm>Confirm booking <span class="arrow">→</span></button>
+      </div>
     </div>
   </section>
 
-  <section class="chatbot glass">
-    <h3>Pharmacy AI Assistant</h3>
-    <div class="chat-window">
-      <div class="bubble bot">Need a refill or vaccine booking?</div>
-      <div class="bubble user">Can I book a flu shot?</div>
-      <div class="bubble bot">Yes! I can schedule it in under 2 minutes.</div>
+  <section class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Core services</span>
+      <h2>Wellness without the wait.</h2>
     </div>
-    <input type="text" placeholder="Ask a question... (demo only)"/>
+    <div class="cap-grid">
+      <div class="cap-card reveal">
+        <div class="cap-icon" style="color: var(--pharm)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-6 9 6v12H3z"/><path d="M9 21V12h6v9"/></svg>
+        </div>
+        <h3>Same-day delivery</h3>
+        <p>Order before 14:00 and we deliver across Durban, Umhlanga and Ballito the same day.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="1">
+        <div class="cap-icon" style="color: var(--pharm)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/></svg>
+        </div>
+        <h3>Vaccinations on demand</h3>
+        <p>Walk-in flu, COVID, travel and HPV vaccinations administered by registered pharmacists.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="2">
+        <div class="cap-icon" style="color: var(--pharm)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        </div>
+        <h3>Auto refills</h3>
+        <p>Photograph your prescription once — we'll text you every month before you run out.</p>
+      </div>
+    </div>
   </section>
 
+  <!-- Chatbot -->
+  <section class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> 24/7 concierge</span>
+      <h2>Pharmacy AI assistant.</h2>
+      <p>Books appointments, accepts prescriptions and answers questions any time.</p>
+    </div>
+
+    <div class="chat-demo glass reveal" data-chat data-replies='["Sure — please send a clear photo of your script via WhatsApp on 083 855 5008.","I have a flu shot slot today at 15:30, or tomorrow morning at 09:00. Which works?","Yes — Discovery, Bonitas, Momentum and Medshield are all directly claimed.","For chronic medication we offer a R39/month auto-refill plan. Want to opt in?"]'>
+      <h3>Chat with the pharmacy</h3>
+      <div class="chat-window">
+        <div class="bubble bot">Hi! I'm Pia 👋 Need a refill, vaccination, or quick consult?</div>
+        <div class="bubble user">Can I book a flu shot today?</div>
+        <div class="bubble bot">Of course! I have 15:30, 16:00 or 16:45 free today. Which works?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Ask about prescriptions, vaccines, deliveries…" />
+        <button type="button">Send</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <button class="btn btn-ghost" data-suggest="I'd like to upload a prescription">Upload script</button>
+        <button class="btn btn-ghost" data-suggest="Do you do auto refills?">Auto refills?</button>
+        <button class="btn btn-ghost" data-suggest="Do you take medical aid?">Medical aid?</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="container foot-bottom">
+      <span>© <span data-year>2026</span> Arcadia Pharmacy · Demo by Vysan Studio</span>
+      <span class="made">A demo built by <a href="index.html"><em>Vysan Studio</em></a></span>
+    </div>
+  </footer>
 </body>
 </html>

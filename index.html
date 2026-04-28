@@ -2,117 +2,485 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vysan Studio — Premium Healthcare Web Design</title>
-  <meta name="description" content="Premium websites for private practices, optometrists, and pharmacies. Designed to convert." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080b" />
+  <title>Vysan Studio — Booking & Service Websites for KZN Businesses</title>
+  <meta name="description" content="High-end websites for service businesses in KwaZulu-Natal — clinics, optometrists, pharmacies, salons and more. Built for trust, speed, and bookings." />
+  <meta property="og:title" content="Vysan Studio — Booking & Service Websites for KZN" />
+  <meta property="og:description" content="Premium websites that turn visitors into bookings. Built in KwaZulu-Natal, South Africa." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%235eead4'/><text x='50%25' y='58%25' text-anchor='middle' font-family='serif' font-weight='700' font-size='18' fill='%23042b22'>V</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body class="portfolio">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
-  <nav class="pill-nav glass">
-    <a class="logo" href="#">Vysan<span>Studio</span></a>
-    <div class="links">
-      <a href="#work">Work</a>
-      <a href="#pricing">Pricing</a>
-    </div>
-    <a class="btn btn-dark" href="#contact">Start Project</a>
-  </nav>
-
-  <header class="hero container reveal">
-    <p class="tag">South Africa • Healthcare Web Specialist</p>
-    <h1>Healthcare websites that feel <span class="italic">premium</span> and convert new patients.</h1>
-    <p class="sub">I build high-end websites for private practices, optometrists and pharmacies that drive bookings and trust instantly.</p>
-    <div class="actions">
-      <a class="btn btn-light" href="#work">View Demos</a>
-      <a class="btn btn-outline" href="#contact">Hire Me</a>
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo"><span class="mark"></span> Vysan<span style="color: var(--accent);">.</span>Studio</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Start a project <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
+  <nav class="nav-mobile" aria-label="Mobile">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-primary" href="#contact">Start a project →</a>
+  </nav>
 
+  <!-- Hero -->
+  <section id="top" class="hero container">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="eyebrow"><span class="dot"></span> KwaZulu-Natal • Booking-first websites</span>
+        <h1>
+          Websites that
+          <em>book clients</em>
+          <br />while you <span class="underline">sleep.</span>
+        </h1>
+        <p class="hero-sub">
+          I design and build premium websites for service businesses across KZN — clinics, salons, optometrists, gyms, pharmacies — engineered to convert local searches into booked appointments.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#work">View live demos <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#contact">Book a discovery call</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="num">5–7 days</div>
+            <div class="lbl">Typical launch time</div>
+          </div>
+          <div class="stat">
+            <div class="num">100/100</div>
+            <div class="lbl">Lighthouse target on launch</div>
+          </div>
+          <div class="stat">
+            <div class="num">KZN-based</div>
+            <div class="lbl">Local. WhatsApp-friendly.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-mockup reveal" data-delay="2" aria-hidden="true">
+        <div class="browser">
+          <div class="browser-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">vysanstudio.co.za / book</span>
+          </div>
+          <div class="browser-body">
+            <span class="eyebrow"><span class="dot"></span> Live booking</span>
+            <h3>Choose a service</h3>
+            <div class="row">
+              <div class="tile"></div><div class="tile"></div><div class="tile"></div>
+            </div>
+            <div class="skel w-90"></div>
+            <div class="skel w-70"></div>
+            <div class="skel w-50"></div>
+            <span class="pill-cta">Confirm booking →</span>
+          </div>
+        </div>
+        <div class="float-chip"><span class="dot"></span> 3 new bookings today</div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Online Bookings <span class="sep"></span></span>
+        <span>WhatsApp CTAs <span class="sep"></span></span>
+        <span>Lightning Fast <span class="sep"></span></span>
+        <span>Mobile-First <span class="sep"></span></span>
+        <span>Local SEO <span class="sep"></span></span>
+        <span>AI Concierge <span class="sep"></span></span>
+        <span>Premium Design <span class="sep"></span></span>
+        <span>Online Bookings <span class="sep"></span></span>
+        <span>WhatsApp CTAs <span class="sep"></span></span>
+        <span>Lightning Fast <span class="sep"></span></span>
+        <span>Mobile-First <span class="sep"></span></span>
+        <span>Local SEO <span class="sep"></span></span>
+        <span>AI Concierge <span class="sep"></span></span>
+        <span>Premium Design <span class="sep"></span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
   <section id="work" class="section container">
-    <h2 class="section-title">Featured Healthcare Demos</h2>
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Featured demos</span>
+      <h2>Real layouts. <em>Real bookings.</em></h2>
+      <p>Each demo is fully interactive — click through the booking widgets, calendars and AI concierges to feel exactly how it'll work for your customers.</p>
+    </div>
 
     <div class="work-grid">
-      <a class="work-card" href="optometrist.html">
-        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&q=80&w=1400');"></div>
+      <a class="work-card reveal" href="optometrist.html">
+        <span class="work-tag">Optometrist</span>
+        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=1400');"></div>
         <div class="work-meta">
           <div>
-            <h3>Visionary Optometry</h3>
-            <p>Optometrist Demo</p>
+            <h3>Visionary Eye Care</h3>
+            <p>Online eye-exam booking · Umhlanga</p>
           </div>
-          <span>View ↗</span>
+          <span class="work-arrow" aria-hidden="true">→</span>
         </div>
       </a>
 
-      <a class="work-card" href="pharmacy.html">
-        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1580281657521-3987b6a21f4b?auto=format&fit=crop&q=80&w=1400');"></div>
+      <a class="work-card reveal" data-delay="1" href="pharmacy.html">
+        <span class="work-tag">Pharmacy</span>
+        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1400');"></div>
         <div class="work-meta">
           <div>
             <h3>Arcadia Pharmacy</h3>
-            <p>Pharmacy Demo</p>
+            <p>Prescription upload · Durban</p>
           </div>
-          <span>View ↗</span>
+          <span class="work-arrow" aria-hidden="true">→</span>
         </div>
       </a>
 
-      <a class="work-card" href="clinic.html">
-        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&q=80&w=1400');"></div>
+      <a class="work-card reveal" data-delay="2" href="clinic.html">
+        <span class="work-tag">Private clinic</span>
+        <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=1400');"></div>
         <div class="work-meta">
           <div>
             <h3>Summit Private Clinic</h3>
-            <p>Doctors Practice Demo</p>
+            <p>Specialist consultations · Ballito</p>
           </div>
-          <span>View ↗</span>
+          <span class="work-arrow" aria-hidden="true">→</span>
         </div>
       </a>
     </div>
   </section>
 
-  <section id="pricing" class="section container reveal">
-    <h2 class="section-title">Transparent Pricing</h2>
+  <!-- Capabilities -->
+  <section id="services" class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> What you get</span>
+      <h2>Senior-level craft, <em>without the agency price tag.</em></h2>
+      <p>Every site I ship comes with the same engineering and design rigour I'd put into a Cape Town startup launch — applied to your local business in KZN.</p>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-card reveal">
+        <div class="cap-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 10h18"/><path d="M8 2v4M16 2v4"/></svg>
+        </div>
+        <h3>Booking system</h3>
+        <p>Calendars, time-slot pickers, service menus and confirmations. Visitors book themselves — you wake up to a full day.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="1">
+        <div class="cap-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12c0 4.97-4.03 9-9 9-1.55 0-3-.39-4.27-1.07L3 21l1.07-4.73A8.96 8.96 0 0 1 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9z"/></svg>
+        </div>
+        <h3>WhatsApp CTAs</h3>
+        <p>One-tap chat buttons that open WhatsApp with a pre-filled message. Where your customers actually live.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="2">
+        <div class="cap-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        </div>
+        <h3>Local SEO</h3>
+        <p>Schema, meta, Google Business, sitemap. Built so neighbours in Umhlanga, Ballito and Durban North find you first.</p>
+      </div>
+      <div class="cap-card reveal">
+        <div class="cap-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h7l-1 8 11-12h-7l0-8z"/></svg>
+        </div>
+        <h3>Lightning fast</h3>
+        <p>Static-first builds, responsive images, perfect Lighthouse scores. Loads instantly even on shaky data.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="1">
+        <div class="cap-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Mobile-first</h3>
+        <p>Designed for the phone in your customer's hand first. Polished gestures, real thumb-zones, no ugly scaling.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="2">
+        <div class="cap-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+        </div>
+        <h3>AI concierge</h3>
+        <p>Optional smart assistant answering FAQs and pre-qualifying leads 24/7. So you don't field the same WhatsApp twice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Process</span>
+      <h2>From idea to live <em>in under a week.</em></h2>
+      <p>A tight, honest process. No vanishing freelancers, no months-long retainers. Just a clear plan and a fast launch.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <h4>Discovery call</h4>
+        <p>30 min over WhatsApp or Zoom. We lock down goals, services and the look-and-feel that fits your brand.</p>
+      </div>
+      <div class="step reveal" data-delay="1">
+        <h4>Design preview</h4>
+        <p>Within 48 hours you get a clickable design preview tailored to your business — not a Canva template.</p>
+      </div>
+      <div class="step reveal" data-delay="2">
+        <h4>Build &amp; copy</h4>
+        <p>I write the copy, code the booking flow and integrate WhatsApp + Google Business. You sign off.</p>
+      </div>
+      <div class="step reveal" data-delay="3">
+        <h4>Launch &amp; train</h4>
+        <p>We launch on your domain, set up tracking, and I train you on managing bookings and content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Pricing</span>
+      <h2>Honest pricing. <em>No surprises.</em></h2>
+      <p>Pick a tier that fits the stage you're at. Every plan ships polished — the only difference is depth.</p>
+    </div>
+
     <div class="pricing-grid">
-      <div class="price-card glass">
-        <h3>Practice Launch</h3>
-        <div class="price">R6,000+</div>
-        <p>Single-page site designed for bookings.</p>
+      <div class="price-card reveal">
+        <h3>Launch</h3>
+        <div class="amount"><span class="from">From</span> R6,500</div>
+        <p class="price-note">Single-page conversion site for a single service business.</p>
         <ul>
-          <li>Premium layout + copy structure</li>
-          <li>Lead form + WhatsApp CTA</li>
+          <li>1-page premium layout</li>
+          <li>WhatsApp + Call CTAs</li>
+          <li>Booking-style enquiry form</li>
+          <li>Google Business setup</li>
           <li>5–7 day turnaround</li>
         </ul>
+        <a class="btn btn-ghost" href="#contact">Start with Launch</a>
       </div>
 
-      <div class="price-card glass featured">
-        <div class="pill">Most Popular</div>
-        <h3>Practice Authority</h3>
-        <div class="price">R13,000+</div>
-        <p>Full website designed for trust and growth.</p>
+      <div class="price-card feature reveal" data-delay="1">
+        <span class="badge">Most popular</span>
+        <h3>Authority</h3>
+        <div class="amount"><span class="from">From</span> R13,500</div>
+        <p class="price-note">A full website built around bookings and trust.</p>
         <ul>
-          <li>Up to 6 pages</li>
-          <li>SEO + speed setup</li>
-          <li>AI chatbot mock integration</li>
+          <li>Up to 6 pages, custom design</li>
+          <li>Interactive booking widget</li>
+          <li>Local SEO + schema markup</li>
+          <li>Reviews + testimonials section</li>
+          <li>WhatsApp + email automations</li>
+          <li>Lighthouse-perfect performance</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Start with Authority <span class="arrow">→</span></a>
+      </div>
+
+      <div class="price-card reveal" data-delay="2">
+        <h3>Concierge</h3>
+        <div class="amount"><span class="from">From</span> R24,500</div>
+        <p class="price-note">For practices and groups that need a flagship presence.</p>
+        <ul>
+          <li>Up to 12 pages, custom design</li>
+          <li>AI chatbot concierge</li>
+          <li>Multi-location bookings</li>
+          <li>Newsletter + lead capture</li>
+          <li>Quarterly performance review</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">Talk to me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Words from owners</span>
+      <h2>What clients say after <em>launch week.</em></h2>
+    </div>
+
+    <div class="tests">
+      <div class="test-card reveal">
+        <p class="quote">“Bookings tripled in the first month. People keep telling me the site looks like something out of Sandton.”</p>
+        <div class="who">
+          <div class="avatar">N</div>
+          <div class="meta"><strong>Naledi M.</strong> Salon owner · Umhlanga</div>
+        </div>
+      </div>
+      <div class="test-card reveal" data-delay="1">
+        <p class="quote">“The WhatsApp button alone paid for the website in 2 weeks. Patients message me directly now.”</p>
+        <div class="who">
+          <div class="avatar">D</div>
+          <div class="meta"><strong>Dr. Dlamini</strong> GP · Pinetown</div>
+        </div>
+      </div>
+      <div class="test-card reveal" data-delay="2">
+        <p class="quote">“Vysan delivered in 6 days flat. Clean code, clear training, and the site is genuinely fast.”</p>
+        <div class="who">
+          <div class="avatar">S</div>
+          <div class="meta"><strong>Sipho K.</strong> Gym manager · Durban</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> FAQ</span>
+      <h2>Quick answers.</h2>
+    </div>
+
+    <div class="faq reveal">
+      <details>
+        <summary>How long does a website take?</summary>
+        <p>Most Launch sites go live in 5–7 days. Authority sites take 10–14 days. Concierge typically takes 3 weeks. I always commit to a date in the proposal.</p>
+      </details>
+      <details>
+        <summary>Do I own the website?</summary>
+        <p>Yes — 100%. The domain stays in your name, the code is yours, and I'll hand over every credential. No lock-in, ever.</p>
+      </details>
+      <details>
+        <summary>Do you do hosting and maintenance?</summary>
+        <p>Yes. Hosting is R250/month including SSL, backups, and small content updates. You can also self-host — I'll set it up either way.</p>
+      </details>
+      <details>
+        <summary>Can you integrate real booking systems?</summary>
+        <p>Absolutely. I integrate Calendly, Fresha, Google Calendar, or build a custom booking system that posts straight to your WhatsApp and email.</p>
+      </details>
+      <details>
+        <summary>Do you only work in healthcare?</summary>
+        <p>No — anything booking-driven works: salons, barbers, gyms, optometrists, dentists, pharmacies, mobile mechanics, tutors, photographers. The framework is the same.</p>
+      </details>
+      <details>
+        <summary>How do payments work?</summary>
+        <p>50% to start, 50% on launch. EFT or PayShap. Invoices in ZAR. No subscriptions unless you opt in to maintenance.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section container">
+    <div class="contact">
+      <div class="contact-card reveal">
+        <span class="eyebrow"><span class="dot"></span> Let's talk</span>
+        <h3>Tell me about your business — I'll send back a plan within 24 hours.</h3>
+        <p>Based in KwaZulu-Natal. Working with service businesses across SA. Reply usually within an hour during the day.</p>
+
+        <div class="contact-list">
+          <a class="contact-row" href="https://wa.me/27838555008?text=Hi%20Vysan%2C%20I%27d%20like%20a%20website%20for%20my%20business.">
+            <span class="ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12c0 4.97-4.03 9-9 9-1.55 0-3-.39-4.27-1.07L3 21l1.07-4.73A8.96 8.96 0 0 1 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9z"/></svg>
+            </span>
+            <span>
+              <span class="lbl">WhatsApp</span>
+              <span class="val">+27 83 855 5008</span>
+            </span>
+          </a>
+          <a class="contact-row" href="tel:+27838555008">
+            <span class="ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92V21a1 1 0 0 1-1.09 1A19 19 0 0 1 2 4.09 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.27 1L7 10.91a16 16 0 0 0 6 6l2.16-1.82a1 1 0 0 1 1-.27l4 1a1 1 0 0 1 .75 1z"/></svg>
+            </span>
+            <span>
+              <span class="lbl">Call</span>
+              <span class="val">083 855 5008</span>
+            </span>
+          </a>
+          <a class="contact-row" href="mailto:chellanvysan@gmail.com">
+            <span class="ico" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg>
+            </span>
+            <span>
+              <span class="lbl">Email</span>
+              <span class="val">chellanvysan@gmail.com</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" data-delay="1" data-contact-form novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="business">Business / practice</label>
+            <input id="business" name="business" type="text" />
+          </div>
+          <div class="field">
+            <label for="budget">Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Select…</option>
+              <option>Under R10k</option>
+              <option>R10k – R20k</option>
+              <option>R20k – R40k</option>
+              <option>R40k+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Tell me about the project</label>
+          <textarea id="message" name="message" placeholder="I run a salon in Umhlanga and want online bookings + a WhatsApp button…"></textarea>
+        </div>
+        <div class="submit-row">
+          <span class="form-note">No spam. No subscription emails. Just a real reply.</span>
+          <button class="btn btn-primary" type="submit">Send enquiry <span class="arrow">→</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="container foot-grid">
+      <div>
+        <a class="nav-logo" href="#top"><span class="mark"></span> Vysan<span style="color: var(--accent);">.</span>Studio</a>
+        <p style="margin-top:14px; max-width: 36ch;">Premium booking websites for service businesses in KwaZulu-Natal — designed and built by Vysan Chellan.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/27838555008">WhatsApp · 083 855 5008</a></li>
+          <li><a href="tel:+27838555008">Call · 083 855 5008</a></li>
+          <li><a href="mailto:chellanvysan@gmail.com">chellanvysan@gmail.com</a></li>
         </ul>
       </div>
     </div>
-  </section>
-
-  <section id="contact" class="section container reveal">
-    <div class="contact-box glass">
-      <h2>Ready to elevate your practice?</h2>
-      <p>Replace with your real details:</p>
-      <p>Email: hello@vysanchellan.dev<br>WhatsApp: +27 00 000 0000</p>
-      <div class="actions">
-        <a class="btn btn-light" href="mailto:hello@vysanchellan.dev">Email Me</a>
-        <a class="btn btn-outline" href="https://wa.me/27000000000">WhatsApp</a>
-      </div>
+    <div class="container foot-bottom">
+      <span>© <span data-year>2026</span> Vysan Studio · KwaZulu-Natal, South Africa</span>
+      <span class="made">Crafted with <em>obsessive attention</em> to detail.</span>
     </div>
-  </section>
-
-  <footer>
-    © 2026 Vysan Studio — Premium Healthcare Web Design
   </footer>
 </body>
 </html>

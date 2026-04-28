@@ -1,42 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Summit Private Clinic</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080b" />
+  <title>Summit Private Clinic — Clinic Demo · Vysan Studio</title>
+  <meta name="description" content="A live demo of a booking-first private clinic website built by Vysan Studio." />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23fda4af'/><text x='50%25' y='58%25' text-anchor='middle' font-family='serif' font-weight='700' font-size='18' fill='%232d0a13'>V</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
-<body class="demo clinic">
+<body class="clinic demo-body">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
-  <a class="back-pill" href="index.html">← Back</a>
+  <a class="demo-back" href="index.html">← Back to Vysan Studio</a>
 
-  <header class="demo-hero clinic-hero">
-    <div class="hero-text">
-      <span class="badge">Private Medical Practice</span>
-      <h1>Precision care for discerning patients.</h1>
-      <p>Executive health screening, diagnostics and private consultations in a luxury clinic environment.</p>
-      <button class="btn btn-light">Request Consultation</button>
+  <header class="demo-hero container">
+    <div class="reveal">
+      <span class="badge">Private Clinic Demo · Ballito</span>
+      <h1>Precision care for <em style="font-style:italic; color: var(--clinic);">discerning patients.</em></h1>
+      <p class="lede">Executive health screening, specialist consultations and private diagnostics in a luxury clinic environment. Direct access to senior physicians, no waiting rooms.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#book">Request consultation <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/27838555008">WhatsApp concierge</a>
+      </div>
+
+      <div class="stats-strip">
+        <div class="it"><div class="num">38</div><div class="lbl">Specialists on-site</div></div>
+        <div class="it"><div class="num">48hr</div><div class="lbl">Specialist access</div></div>
+        <div class="it"><div class="num">5★</div><div class="lbl">Patient satisfaction</div></div>
+        <div class="it"><div class="num">2008</div><div class="lbl">Established</div></div>
+      </div>
+    </div>
+
+    <div class="demo-vis reveal" data-delay="2" style="background-image:url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=1400');">
+      <div class="float tl"><strong>Dr. M. Govender</strong>Internal Medicine · MBChB FCP(SA)</div>
+      <div class="float br"><strong>Direct claims</strong>Discovery · Bonitas · Momentum</div>
     </div>
   </header>
 
-  <section class="demo-section">
-    <h2>Signature Services</h2>
-    <div class="feature-grid">
-      <div class="feature-card">Executive health screens</div>
-      <div class="feature-card">Priority appointment access</div>
-      <div class="feature-card">Private diagnostics</div>
+  <section id="book" class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Live booking demo</span>
+      <h2>Request a consultation.</h2>
+      <p>Choose a specialty and your preferred time. Our concierge team confirms within the hour.</p>
+    </div>
+
+    <div class="booking glass reveal" data-booking>
+      <div class="booking-head">
+        <h3>New consultation</h3>
+        <div class="stepper">
+          <span class="num active">1</span><span class="line"></span>
+          <span class="num">2</span><span class="line"></span>
+          <span class="num">3</span><span class="line"></span>
+          <span class="num">4</span>
+        </div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Choose specialty</p>
+        <div class="svc-grid">
+          <button class="svc" data-name="GP consultation" data-duration="30 min" aria-pressed="true">
+            <span class="name">GP consultation</span>
+            <span class="duration">30 min · R650</span>
+          </button>
+          <button class="svc" data-name="Cardiology consult" data-duration="45 min">
+            <span class="name">Cardiology</span>
+            <span class="duration">45 min · R1,650</span>
+          </button>
+          <button class="svc" data-name="Dermatology consult" data-duration="30 min">
+            <span class="name">Dermatology</span>
+            <span class="duration">30 min · R1,250</span>
+          </button>
+          <button class="svc" data-name="Executive screen" data-duration="120 min">
+            <span class="name">Executive screen</span>
+            <span class="duration">2 hr · R6,500</span>
+          </button>
+          <button class="svc" data-name="Women's health" data-duration="45 min">
+            <span class="name">Women's health</span>
+            <span class="duration">45 min · R1,150</span>
+          </button>
+          <button class="svc" data-name="Travel medicine" data-duration="30 min">
+            <span class="name">Travel medicine</span>
+            <span class="duration">30 min · R850</span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Pick a date</p>
+        <div class="cal" aria-label="Calendar"></div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Available times</p>
+        <div class="slots"></div>
+      </div>
+
+      <div class="summary"></div>
+
+      <div class="booking-actions">
+        <button class="ghost" type="button">Save for later</button>
+        <button class="btn btn-primary" type="button" data-confirm>Confirm consultation <span class="arrow">→</span></button>
+      </div>
     </div>
   </section>
 
-  <section class="chatbot glass">
-    <h3>Clinic AI Concierge</h3>
-    <div class="chat-window">
-      <div class="bubble bot">Welcome to Summit Clinic. How can I assist?</div>
-      <div class="bubble user">I need a specialist consult.</div>
-      <div class="bubble bot">I can help schedule that. What specialty are you looking for?</div>
+  <section class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Signature services</span>
+      <h2>The Summit standard.</h2>
     </div>
-    <input type="text" placeholder="Ask a question... (demo only)"/>
+    <div class="cap-grid">
+      <div class="cap-card reveal">
+        <div class="cap-icon" style="color: var(--clinic)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <h3>Executive screens</h3>
+        <p>Two-hour, top-to-toe assessment with bloods, ECG, ultrasound and physician review.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="1">
+        <div class="cap-icon" style="color: var(--clinic)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Priority access</h3>
+        <p>Specialist consults within 48 hours. Concierge team handles referrals and authorisations.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="2">
+        <div class="cap-icon" style="color: var(--clinic)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        </div>
+        <h3>On-site diagnostics</h3>
+        <p>Pathology, imaging and ECG performed in-house — most results back the same visit.</p>
+      </div>
+    </div>
   </section>
 
+  <section class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Concierge</span>
+      <h2>Speak to the clinic.</h2>
+      <p>Our concierge AI handles routine queries, leaving the medical team free for patients.</p>
+    </div>
+
+    <div class="chat-demo glass reveal" data-chat data-replies='["Of course. May I confirm whether you would like a male or female physician?","We have GP slots tomorrow at 09:30 and 14:15. Would either suit?","Yes — Discovery Executive plans claim our consults at 100%. We submit on your behalf.","Our address is 12 Summit Drive, Ballito. There is complimentary valet parking on arrival."]'>
+      <h3>Chat with our concierge</h3>
+      <div class="chat-window">
+        <div class="bubble bot">Welcome to Summit. I'm Sera 👋 How may I assist?</div>
+        <div class="bubble user">I'd like to book a specialist consult.</div>
+        <div class="bubble bot">Certainly. May I ask which specialty you require?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Ask about specialists, consults, medical aid…" />
+        <button type="button">Send</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <button class="btn btn-ghost" data-suggest="I'd like an executive health screen">Executive screen</button>
+        <button class="btn btn-ghost" data-suggest="Do you accept Discovery?">Discovery?</button>
+        <button class="btn btn-ghost" data-suggest="Where are you located?">Location?</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="container foot-bottom">
+      <span>© <span data-year>2026</span> Summit Private Clinic · Demo by Vysan Studio</span>
+      <span class="made">A demo built by <a href="index.html"><em>Vysan Studio</em></a></span>
+    </div>
+  </footer>
 </body>
 </html>

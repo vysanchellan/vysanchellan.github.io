@@ -1,43 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Visionary Optometry</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080b" />
+  <title>Visionary Eye Care — Optometrist Demo · Vysan Studio</title>
+  <meta name="description" content="A live demo of a booking-first optometrist website built by Vysan Studio." />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2367e8f9'/><text x='50%25' y='58%25' text-anchor='middle' font-family='serif' font-weight='700' font-size='18' fill='%23042a30'>V</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
-<body class="demo opto">
+<body class="opto demo-body">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
-  <a class="back-pill" href="index.html">← Back</a>
+  <a class="demo-back" href="index.html">← Back to Vysan Studio</a>
 
-  <header class="demo-hero opto-hero">
-    <div class="hero-text">
-      <span class="badge">Premium Eye Care</span>
-      <h1>Sharper vision, exceptional care.</h1>
-      <p>State-of-the-art vision testing, designer frames, and contact lens specialists in Sandton.</p>
-      <button class="btn btn-light">Book Eye Exam</button>
+  <!-- Hero -->
+  <header class="demo-hero container">
+    <div class="reveal">
+      <span class="badge">Optometrist Demo · Umhlanga</span>
+      <h1>Sharper vision, <em style="font-style:italic; color: var(--opto);">premium care.</em></h1>
+      <p class="lede">State-of-the-art retinal imaging, designer frames, and same-week appointments. Book online in under a minute — no phone calls, no queues.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#book">Book an eye exam <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/27838555008">WhatsApp us</a>
+      </div>
+
+      <div class="stats-strip">
+        <div class="it"><div class="num">12,400+</div><div class="lbl">Eye exams</div></div>
+        <div class="it"><div class="num">4.9★</div><div class="lbl">Google rating</div></div>
+        <div class="it"><div class="num">Same-week</div><div class="lbl">Appointments</div></div>
+        <div class="it"><div class="num">Medical aid</div><div class="lbl">Direct claims</div></div>
+      </div>
     </div>
-    <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=1400');"></div>
+
+    <div class="demo-vis reveal" data-delay="2" style="background-image:url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=1400');">
+      <div class="float tl"><strong>Dr. Nadia Pillay</strong>Optometrist, M.Optom (UKZN)</div>
+      <div class="float br"><strong>Tomorrow · 09:15</strong>Next available exam</div>
+    </div>
   </header>
 
-  <section class="demo-section">
-    <h2>Why Patients Choose Us</h2>
-    <div class="feature-grid">
-      <div class="feature-card">AI-powered eye screening</div>
-      <div class="feature-card">Same-week appointments</div>
-      <div class="feature-card">Luxury eyewear gallery</div>
+  <!-- Booking widget -->
+  <section id="book" class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Live booking demo</span>
+      <h2>Book your eye exam.</h2>
+      <p>Pick a service, a date and a time. The widget below is fully interactive — try it.</p>
+    </div>
+
+    <div class="booking glass reveal" data-booking>
+      <div class="booking-head">
+        <h3>New appointment</h3>
+        <div class="stepper">
+          <span class="num active">1</span><span class="line"></span>
+          <span class="num">2</span><span class="line"></span>
+          <span class="num">3</span><span class="line"></span>
+          <span class="num">4</span>
+        </div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Choose service</p>
+        <div class="svc-grid">
+          <button class="svc" data-name="Comprehensive eye exam" data-duration="45 min" aria-pressed="true">
+            <span class="name">Comprehensive exam</span>
+            <span class="duration">45 min · R650</span>
+          </button>
+          <button class="svc" data-name="Contact lens fitting" data-duration="30 min">
+            <span class="name">Contact lens fitting</span>
+            <span class="duration">30 min · R450</span>
+          </button>
+          <button class="svc" data-name="Retinal imaging" data-duration="20 min">
+            <span class="name">Retinal imaging</span>
+            <span class="duration">20 min · R380</span>
+          </button>
+          <button class="svc" data-name="Children's screening" data-duration="30 min">
+            <span class="name">Children's screening</span>
+            <span class="duration">30 min · R420</span>
+          </button>
+          <button class="svc" data-name="Dry eye consult" data-duration="25 min">
+            <span class="name">Dry eye consult</span>
+            <span class="duration">25 min · R390</span>
+          </button>
+          <button class="svc" data-name="Frame styling" data-duration="20 min">
+            <span class="name">Frame styling</span>
+            <span class="duration">20 min · Free</span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Pick a date</p>
+        <div class="cal" aria-label="Calendar"></div>
+      </div>
+
+      <div>
+        <p style="color:var(--muted);margin-bottom:10px;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase">Available times</p>
+        <div class="slots"></div>
+      </div>
+
+      <div class="summary"></div>
+
+      <div class="booking-actions">
+        <button class="ghost" type="button">Save for later</button>
+        <button class="btn btn-primary" type="button" data-confirm>Confirm booking <span class="arrow">→</span></button>
+      </div>
     </div>
   </section>
 
-  <section class="chatbot glass">
-    <h3>AI Vision Assistant</h3>
-    <div class="chat-window">
-      <div class="bubble bot">Hi! Want to book an eye exam or learn about lens options?</div>
-      <div class="bubble user">I want a checkup this week.</div>
-      <div class="bubble bot">Perfect. Would you prefer mornings or afternoons?</div>
+  <!-- Why -->
+  <section class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Why patients choose us</span>
+      <h2>Modern eye care, <em style="color: var(--opto);">human touch.</em></h2>
     </div>
-    <input type="text" placeholder="Ask a question... (demo only)"/>
+    <div class="cap-grid">
+      <div class="cap-card reveal">
+        <div class="cap-icon" style="color: var(--opto)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>AI retinal screening</h3>
+        <p>Detect early signs of glaucoma, diabetes and macular changes in under 60 seconds.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="1">
+        <div class="cap-icon" style="color: var(--opto)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 10h18"/></svg>
+        </div>
+        <h3>Same-week appointments</h3>
+        <p>Most patients are booked within 3 days. Emergency slots open every morning.</p>
+      </div>
+      <div class="cap-card reveal" data-delay="2">
+        <div class="cap-icon" style="color: var(--opto)" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3>Designer eyewear</h3>
+        <p>Curated frames from Tom Ford, Gucci, Ray-Ban and local SA designers.</p>
+      </div>
+    </div>
   </section>
 
+  <!-- Chatbot demo -->
+  <section class="section container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> 24/7 concierge</span>
+      <h2>AI vision assistant.</h2>
+      <p>Pre-qualifies leads, answers FAQs and books exams while you sleep.</p>
+    </div>
+
+    <div class="chat-demo glass reveal" data-chat data-replies='["Great! For an eye exam I have Tuesday 09:15 and Wednesday 14:30 open. Which works for you?","Most medical aids cover an annual eye exam. Would you like me to check yours?","Yes — we stock Ray-Ban, Tom Ford, Gucci and Maui Jim. Want to browse a few options first?","If you experience sudden vision loss please call us on 083 855 5008 immediately."]'>
+      <h3>Chat with our concierge</h3>
+      <div class="chat-window">
+        <div class="bubble bot">Hi, I'm Iris 👋 Want me to help you book an eye exam, check your medical aid, or browse frames?</div>
+        <div class="bubble user">I'd like an eye exam this week.</div>
+        <div class="bubble bot">Lovely! Which day works — Tuesday, Wednesday or Friday?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Ask about exams, frames, medical aid…" />
+        <button type="button">Send</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <button class="btn btn-ghost" data-suggest="Do you take Discovery medical aid?">Medical aid?</button>
+        <button class="btn btn-ghost" data-suggest="Do you have designer frames?">Designer frames?</button>
+        <button class="btn btn-ghost" data-suggest="Where are you based?">Location?</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="container foot-bottom">
+      <span>© <span data-year>2026</span> Visionary Eye Care · Demo by Vysan Studio</span>
+      <span class="made">A demo built by <a href="index.html"><em>Vysan Studio</em></a></span>
+    </div>
+  </footer>
 </body>
 </html>
