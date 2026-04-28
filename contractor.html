@@ -1,50 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TitanBuild Contractors — Demo</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Summit Private Clinic</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body class="demo-page">
-  <header class="demo-nav glass">
-    <a href="index.html">← Back to Portfolio</a>
-    <strong>TitanBuild Contractors (Demo)</strong>
-    <a href="#quote">Get Quote</a>
+<body class="demo clinic">
+
+  <a class="back-pill" href="index.html">← Back</a>
+
+  <header class="demo-hero clinic-hero">
+    <div class="hero-text">
+      <span class="badge">Private Medical Practice</span>
+      <h1>Precision care for discerning patients.</h1>
+      <p>Executive health screening, diagnostics and private consultations in a luxury clinic environment.</p>
+      <button class="btn btn-light">Request Consultation</button>
+    </div>
   </header>
 
-  <section class="demo-hero contractor">
-    <div>
-      <p class="eyebrow">Residential & Commercial Projects</p>
-      <h1>Reliable Builds. On Time. On Budget.</h1>
-      <p>From renovations to full projects, we deliver quality workmanship with transparent communication.</p>
-      <a class="btn btn-primary" href="#quote">Request Quote</a>
+  <section class="demo-section">
+    <h2>Signature Services</h2>
+    <div class="feature-grid">
+      <div class="feature-card">Executive health screens</div>
+      <div class="feature-card">Priority appointment access</div>
+      <div class="feature-card">Private diagnostics</div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="section-head"><h2>Core Services</h2></div>
-    <div class="card-grid mini">
-      <article class="glass mini-card"><h3>Renovations</h3><p>Kitchen, bathroom, interior upgrades.</p></article>
-      <article class="glass mini-card"><h3>Extensions</h3><p>New rooms, garages, outdoor spaces.</p></article>
-      <article class="glass mini-card"><h3>Commercial Fit-outs</h3><p>Efficient, compliant project delivery.</p></article>
+  <section class="chatbot glass">
+    <h3>Clinic AI Concierge</h3>
+    <div class="chat-window">
+      <div class="bubble bot">Welcome to Summit Clinic. How can I assist?</div>
+      <div class="bubble user">I need a specialist consult.</div>
+      <div class="bubble bot">I can help schedule that. What specialty are you looking for?</div>
     </div>
+    <input type="text" placeholder="Ask a question... (demo only)"/>
   </section>
 
-  <section id="quote" class="section">
-    <div class="contact-wrap glass">
-      <div>
-        <h3>Request a free site quote</h3>
-        <p>Call: +27 00 000 0000</p>
-        <p>Email: quotes@titanbuild.co.za</p>
-      </div>
-      <form onsubmit="event.preventDefault(); alert('Demo form submitted');">
-        <input required placeholder="Name">
-        <input required placeholder="Location">
-        <textarea rows="4" placeholder="Project details"></textarea>
-        <button class="btn btn-primary">Send Quote Request</button>
-      </form>
-    </div>
-  </section>
 </body>
 </html>
